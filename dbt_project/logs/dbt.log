@@ -1,0 +1,490 @@
+[0m12:03:42.300244 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ba6300>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e09490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e08dd0>]}
+
+
+============================== 12:03:42.302414 | 1e2fc7e9-1e7e-4e1f-9962-48d909b36d91 ==============================
+[0m12:03:42.302414 [info ] [MainThread]: Running with dbt=1.11.8
+[0m12:03:42.302646 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'printer_width': '80', 'no_print': 'None', 'write_json': 'True', 'debug': 'False', 'version_check': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'static_parser': 'True', 'log_path': '/Users/deepak/PycharmProjects/SemanticModeling/dbt_project/logs', 'profiles_dir': '/Users/deepak/.dbt', 'invocation_command': 'dbt run --select fct_revenue', 'cache_selected_only': 'False', 'quiet': 'False', 'introspect': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'empty': 'False', 'partial_parse': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True'}
+[0m12:03:42.387126 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1e2fc7e9-1e7e-4e1f-9962-48d909b36d91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a091a00>]}
+[0m12:03:42.407801 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1e2fc7e9-1e7e-4e1f-9962-48d909b36d91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109c69850>]}
+[0m12:03:42.408923 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m12:03:42.453448 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m12:03:42.453797 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m12:03:42.453937 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1e2fc7e9-1e7e-4e1f-9962-48d909b36d91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109efce30>]}
+[0m12:03:42.823133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1e2fc7e9-1e7e-4e1f-9962-48d909b36d91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a44e600>]}
+[0m12:03:42.845305 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/deepak/PycharmProjects/SemanticModeling/dbt_project/target/manifest.json
+[0m12:03:42.846287 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/deepak/PycharmProjects/SemanticModeling/dbt_project/target/semantic_manifest.json
+[0m12:03:42.851341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1e2fc7e9-1e7e-4e1f-9962-48d909b36d91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a1cb140>]}
+[0m12:03:42.851515 [info ] [MainThread]: Found 4 models, 475 macros
+[0m12:03:42.851634 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1e2fc7e9-1e7e-4e1f-9962-48d909b36d91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a758680>]}
+[0m12:03:42.852242 [info ] [MainThread]: 
+[0m12:03:42.852371 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m12:03:42.852465 [info ] [MainThread]: 
+[0m12:03:42.852623 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:03:42.852917 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_poc'
+[0m12:03:42.875535 [debug] [ThreadPool]: Using duckdb connection "list_poc"
+[0m12:03:42.875698 [debug] [ThreadPool]: On list_poc: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "poc", "target_name": "dev", "connection_name": "list_poc"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"poc"'
+    
+  
+  
+[0m12:03:42.875813 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:03:42.880420 [debug] [ThreadPool]: DuckDB adapter: duckdb error: IO Error: Could not set lock on file "/Users/deepak/PycharmProjects/SemanticModeling/duckdb/poc.db": Conflicting lock is held in /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python (PID 16863) by user deepak. However, you would be able to open this database in read-only mode, e.g. by using the -readonly parameter in the CLI. See also https://duckdb.org/docs/stable/connect/concurrency
+[0m12:03:42.880562 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "poc", "target_name": "dev", "connection_name": "list_poc"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"poc"'
+    
+  
+  
+[0m12:03:42.880659 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m12:03:42.880747 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:03:42.882359 [debug] [ThreadPool]: DuckDB adapter: duckdb error: IO Error: Could not set lock on file "/Users/deepak/PycharmProjects/SemanticModeling/duckdb/poc.db": Conflicting lock is held in /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python (PID 16863) by user deepak. However, you would be able to open this database in read-only mode, e.g. by using the -readonly parameter in the CLI. See also https://duckdb.org/docs/stable/connect/concurrency
+[0m12:03:42.882473 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: macro list_schemas
+[0m12:03:42.882564 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m12:03:42.882650 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:03:42.884196 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:03:42.884295 [debug] [MainThread]: Connection 'list_poc' was properly closed.
+[0m12:03:42.884394 [info ] [MainThread]: 
+[0m12:03:42.884513 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.03 seconds (0.03s).
+[0m12:03:42.884686 [error] [MainThread]: Encountered an error:
+IO Error: Could not set lock on file "/Users/deepak/PycharmProjects/SemanticModeling/duckdb/poc.db": Conflicting lock is held in /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python (PID 16863) by user deepak. However, you would be able to open this database in read-only mode, e.g. by using the -readonly parameter in the CLI. See also https://duckdb.org/docs/stable/connect/concurrency
+[0m12:03:42.890518 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/connections.py", line 95, in exception_handler
+    yield
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/sql/connections.py", line 147, in add_query
+    cursor = connection.handle.cursor()
+             ^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/connections.py", line 53, in open
+    connection.handle = cls._ENV.handle()
+                        ^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/environments/local.py", line 75, in handle
+    self.conn = self.initialize_db(self.creds, self._plugins)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 159, in initialize_db
+    conn = duckdb.connect(creds.path, read_only=False, config=config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_duckdb.IOException: IO Error: Could not set lock on file "/Users/deepak/PycharmProjects/SemanticModeling/duckdb/poc.db": Conflicting lock is held in /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python (PID 16863) by user deepak. However, you would be able to open this database in read-only mode, e.g. by using the -readonly parameter in the CLI. See also https://duckdb.org/docs/stable/connect/concurrency
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/connections.py", line 95, in exception_handler
+    yield
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/base/impl.py", line 1320, in execute_macro
+    result = macro_function(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt_common/clients/jinja.py", line 427, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt_common/clients/jinja.py", line 395, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 20, in macro
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/clients/jinja.py", line 82, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt_common/clients/jinja.py", line 395, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 50, in macro
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/clients/jinja.py", line 82, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt_common/clients/jinja.py", line 395, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 33, in macro
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/clients/jinja.py", line 82, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt_common/clients/jinja.py", line 395, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 52, in macro
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt_common/record.py", line 538, in record_replay_wrapper
+    return func_to_record(*call_args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/base/impl.py", line 471, in execute
+    return self.connections.execute(sql=sql, auto_begin=auto_begin, fetch=fetch, limit=limit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/connections.py", line 130, in execute
+    return super().execute(sql, auto_begin, fetch, limit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/sql/connections.py", line 219, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/sql/connections.py", line 131, in add_query
+    with self.exception_handler(sql):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/connections.py", line 102, in exception_handler
+    self.rollback_if_open()
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/base/connections.py", line 125, in rollback_if_open
+    if conn is not None and conn.handle and conn.transaction_open:
+                            ^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/connections.py", line 53, in open
+    connection.handle = cls._ENV.handle()
+                        ^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/environments/local.py", line 75, in handle
+    self.conn = self.initialize_db(self.creds, self._plugins)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 159, in initialize_db
+    conn = duckdb.connect(creds.path, read_only=False, config=config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_duckdb.IOException: IO Error: Could not set lock on file "/Users/deepak/PycharmProjects/SemanticModeling/duckdb/poc.db": Conflicting lock is held in /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python (PID 16863) by user deepak. However, you would be able to open this database in read-only mode, e.g. by using the -readonly parameter in the CLI. See also https://duckdb.org/docs/stable/connect/concurrency
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 276, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 321, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 391, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 368, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 408, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/cli/main.py", line 593, in run
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 626, in run
+    result = self.execute_with_hooks(selected_uids)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 559, in execute_with_hooks
+    before_run_status = self.before_run(adapter, selected_uids)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/task/run.py", line 1114, in before_run
+    self.create_schemas(adapter, required_schemas)
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 734, in create_schemas
+    existing_schemas_lowered.update(ls_future.result())
+                                    ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt_common/utils/executor.py", line 16, in connected
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 709, in list_schemas
+    for s in adapter.list_schemas(database_quoted)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/sql/impl.py", line 218, in list_schemas
+    results = self.execute_macro(LIST_SCHEMAS_MACRO_NAME, kwargs={"database": database})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/base/impl.py", line 1319, in execute_macro
+    with self.connections.exception_handler(f"macro {macro_name}"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/connections.py", line 102, in exception_handler
+    self.rollback_if_open()
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/base/connections.py", line 125, in rollback_if_open
+    if conn is not None and conn.handle and conn.transaction_open:
+                            ^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/connections.py", line 53, in open
+    connection.handle = cls._ENV.handle()
+                        ^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/environments/local.py", line 75, in handle
+    self.conn = self.initialize_db(self.creds, self._plugins)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepak/PycharmProjects/SemanticModeling/.venv/lib/python3.12/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 159, in initialize_db
+    conn = duckdb.connect(creds.path, read_only=False, config=config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_duckdb.IOException: IO Error: Could not set lock on file "/Users/deepak/PycharmProjects/SemanticModeling/duckdb/poc.db": Conflicting lock is held in /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python (PID 16863) by user deepak. However, you would be able to open this database in read-only mode, e.g. by using the -readonly parameter in the CLI. See also https://duckdb.org/docs/stable/connect/concurrency
+
+[0m12:03:42.893848 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.62290365, "process_in_blocks": "0", "process_kernel_time": 0.140272, "process_mem_max_rss": "149798912", "process_out_blocks": "0", "process_user_time": 1.015115}
+[0m12:03:42.894053 [debug] [MainThread]: Command `dbt run` failed at 12:03:42.894016 after 0.62 seconds
+[0m12:03:42.894195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109c69790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c294fe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a73fa70>]}
+[0m12:03:42.894331 [debug] [MainThread]: Flushing usage events
+[0m12:03:44.190217 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:04:42.269964 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1047ef800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106409430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106408d70>]}
+
+
+============================== 12:04:42.271984 | c2386a6e-ad72-4d9f-9d43-4bfb6600302f ==============================
+[0m12:04:42.271984 [info ] [MainThread]: Running with dbt=1.11.8
+[0m12:04:42.272221 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/deepak/.dbt', 'invocation_command': 'dbt run --select fct_revenue', 'static_parser': 'True', 'partial_parse': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'target_path': 'None', 'indirect_selection': 'eager', 'no_print': 'None', 'fail_fast': 'False', 'introspect': 'True', 'warn_error': 'None', 'version_check': 'True', 'printer_width': '80', 'log_path': '/Users/deepak/PycharmProjects/SemanticModeling/dbt_project/logs', 'debug': 'False', 'empty': 'False'}
+[0m12:04:42.346590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c2386a6e-ad72-4d9f-9d43-4bfb6600302f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b644a0>]}
+[0m12:04:42.367118 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c2386a6e-ad72-4d9f-9d43-4bfb6600302f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10634a9f0>]}
+[0m12:04:42.368433 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m12:04:42.410991 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m12:04:42.445849 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:04:42.446028 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m12:04:42.446122 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:04:42.455270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c2386a6e-ad72-4d9f-9d43-4bfb6600302f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10675fd40>]}
+[0m12:04:42.478557 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/deepak/PycharmProjects/SemanticModeling/dbt_project/target/manifest.json
+[0m12:04:42.479455 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/deepak/PycharmProjects/SemanticModeling/dbt_project/target/semantic_manifest.json
+[0m12:04:42.483685 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c2386a6e-ad72-4d9f-9d43-4bfb6600302f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106984200>]}
+[0m12:04:42.483865 [info ] [MainThread]: Found 4 models, 475 macros
+[0m12:04:42.484001 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c2386a6e-ad72-4d9f-9d43-4bfb6600302f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c113d0>]}
+[0m12:04:42.484580 [info ] [MainThread]: 
+[0m12:04:42.484704 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m12:04:42.484798 [info ] [MainThread]: 
+[0m12:04:42.485033 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:04:42.485420 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_poc'
+[0m12:04:42.508233 [debug] [ThreadPool]: Using duckdb connection "list_poc"
+[0m12:04:42.508363 [debug] [ThreadPool]: On list_poc: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "poc", "target_name": "dev", "connection_name": "list_poc"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"poc"'
+    
+  
+  
+[0m12:04:42.508468 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:04:42.514680 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m12:04:42.515232 [debug] [ThreadPool]: On list_poc: Close
+[0m12:04:42.515462 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_poc, now create_poc_main)
+[0m12:04:42.515609 [debug] [ThreadPool]: Creating schema "database: "poc"
+schema: "main"
+"
+[0m12:04:42.518033 [debug] [ThreadPool]: Using duckdb connection "create_poc_main"
+[0m12:04:42.518135 [debug] [ThreadPool]: On create_poc_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "poc", "target_name": "dev", "connection_name": "create_poc_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='poc'
+        and type='sqlite'
+    
+  
+[0m12:04:42.518228 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:04:42.518652 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:04:42.519198 [debug] [ThreadPool]: Using duckdb connection "create_poc_main"
+[0m12:04:42.519296 [debug] [ThreadPool]: On create_poc_main: BEGIN
+[0m12:04:42.519424 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:04:42.519513 [debug] [ThreadPool]: Using duckdb connection "create_poc_main"
+[0m12:04:42.519602 [debug] [ThreadPool]: On create_poc_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "poc", "target_name": "dev", "connection_name": "create_poc_main"} */
+
+    
+    
+        create schema if not exists "poc"."main"
+    
+[0m12:04:42.519919 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:04:42.520257 [debug] [ThreadPool]: On create_poc_main: COMMIT
+[0m12:04:42.520357 [debug] [ThreadPool]: Using duckdb connection "create_poc_main"
+[0m12:04:42.520441 [debug] [ThreadPool]: On create_poc_main: COMMIT
+[0m12:04:42.520577 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:04:42.520669 [debug] [ThreadPool]: On create_poc_main: Close
+[0m12:04:42.522349 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_poc_main, now list_poc_main)
+[0m12:04:42.524230 [debug] [ThreadPool]: Using duckdb connection "list_poc_main"
+[0m12:04:42.524338 [debug] [ThreadPool]: On list_poc_main: BEGIN
+[0m12:04:42.524418 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:04:42.524558 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:04:42.524644 [debug] [ThreadPool]: Using duckdb connection "list_poc_main"
+[0m12:04:42.524738 [debug] [ThreadPool]: On list_poc_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "poc", "target_name": "dev", "connection_name": "list_poc_main"} */
+select
+      'poc' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'poc'
+  
+[0m12:04:42.526624 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m12:04:42.527119 [debug] [ThreadPool]: On list_poc_main: ROLLBACK
+[0m12:04:42.527784 [debug] [ThreadPool]: Failed to rollback 'list_poc_main'
+[0m12:04:42.527887 [debug] [ThreadPool]: On list_poc_main: Close
+[0m12:04:42.528245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c2386a6e-ad72-4d9f-9d43-4bfb6600302f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1034bb620>]}
+[0m12:04:42.528400 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:04:42.528497 [debug] [MainThread]: On master: BEGIN
+[0m12:04:42.528585 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:04:42.528731 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:04:42.528820 [debug] [MainThread]: On master: COMMIT
+[0m12:04:42.528907 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:04:42.528992 [debug] [MainThread]: On master: COMMIT
+[0m12:04:42.529148 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:04:42.529289 [debug] [MainThread]: On master: Close
+[0m12:04:42.530601 [debug] [Thread-1 (]: Began running node model.semantic_poc.fct_revenue
+[0m12:04:42.530766 [info ] [Thread-1 (]: 1 of 1 START sql view model main.fct_revenue ................................... [RUN]
+[0m12:04:42.530923 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_poc_main, now model.semantic_poc.fct_revenue)
+[0m12:04:42.531042 [debug] [Thread-1 (]: Began compiling node model.semantic_poc.fct_revenue
+[0m12:04:42.533600 [debug] [Thread-1 (]: Writing injected SQL for node "model.semantic_poc.fct_revenue"
+[0m12:04:42.533970 [debug] [Thread-1 (]: Began executing node model.semantic_poc.fct_revenue
+[0m12:04:42.544326 [debug] [Thread-1 (]: Writing runtime sql for node "model.semantic_poc.fct_revenue"
+[0m12:04:42.544837 [debug] [Thread-1 (]: Using duckdb connection "model.semantic_poc.fct_revenue"
+[0m12:04:42.544951 [debug] [Thread-1 (]: On model.semantic_poc.fct_revenue: BEGIN
+[0m12:04:42.545065 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:04:42.545307 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:04:42.545422 [debug] [Thread-1 (]: Using duckdb connection "model.semantic_poc.fct_revenue"
+[0m12:04:42.545548 [debug] [Thread-1 (]: On model.semantic_poc.fct_revenue: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "poc", "target_name": "dev", "node_id": "model.semantic_poc.fct_revenue"} */
+
+  
+  create view "poc"."main"."fct_revenue__dbt_tmp" as (
+    
+
+-- This is the single source of truth for revenue.
+-- All consumers (BI, LLM, APIs) should query THIS, not raw tables.
+
+
+WITH orders AS (
+    SELECT
+        order_id,
+        customer_id,
+        product_id,
+        order_date,
+        DATE_TRUNC('month', order_date)  AS order_month,
+        DATE_TRUNC('quarter', order_date) AS order_quarter,
+        net_amount,
+        gross_amount,
+        discount,
+        status,
+        region
+    FROM raw_orders
+    WHERE status = 'completed'   -- REVENUE = completed orders only
+),
+enriched AS (
+    SELECT
+        o.*,
+        c.segment      AS customer_segment,
+        c.customer_name,
+        p.category     AS product_category,
+        p.list_price,
+        p.cost,
+        (o.net_amount - p.cost) AS gross_profit
+    FROM orders o
+    LEFT JOIN raw_customers c ON o.customer_id = c.customer_id
+    LEFT JOIN raw_products  p ON o.product_id  = p.product_id
+)
+SELECT * FROM enriched
+  );
+
+[0m12:04:42.546543 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:04:42.548644 [debug] [Thread-1 (]: Using duckdb connection "model.semantic_poc.fct_revenue"
+[0m12:04:42.548764 [debug] [Thread-1 (]: On model.semantic_poc.fct_revenue: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "poc", "target_name": "dev", "node_id": "model.semantic_poc.fct_revenue"} */
+alter view "poc"."main"."fct_revenue__dbt_tmp" rename to "fct_revenue"
+[0m12:04:42.549136 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:04:42.553140 [debug] [Thread-1 (]: On model.semantic_poc.fct_revenue: COMMIT
+[0m12:04:42.553279 [debug] [Thread-1 (]: Using duckdb connection "model.semantic_poc.fct_revenue"
+[0m12:04:42.553385 [debug] [Thread-1 (]: On model.semantic_poc.fct_revenue: COMMIT
+[0m12:04:42.553719 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:04:42.556013 [debug] [Thread-1 (]: Using duckdb connection "model.semantic_poc.fct_revenue"
+[0m12:04:42.556131 [debug] [Thread-1 (]: On model.semantic_poc.fct_revenue: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "poc", "target_name": "dev", "node_id": "model.semantic_poc.fct_revenue"} */
+
+      drop view if exists "poc"."main"."fct_revenue__dbt_backup" cascade
+    
+[0m12:04:42.556460 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:04:42.557273 [debug] [Thread-1 (]: On model.semantic_poc.fct_revenue: Close
+[0m12:04:42.558012 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c2386a6e-ad72-4d9f-9d43-4bfb6600302f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1066a8d40>]}
+[0m12:04:42.558232 [info ] [Thread-1 (]: 1 of 1 OK created sql view model main.fct_revenue .............................. [[32mOK[0m in 0.03s]
+[0m12:04:42.558432 [debug] [Thread-1 (]: Finished running node model.semantic_poc.fct_revenue
+[0m12:04:42.558831 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:04:42.558951 [debug] [MainThread]: On master: BEGIN
+[0m12:04:42.559044 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:04:42.559229 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:04:42.559334 [debug] [MainThread]: On master: COMMIT
+[0m12:04:42.559426 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:04:42.559511 [debug] [MainThread]: On master: COMMIT
+[0m12:04:42.559648 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:04:42.559751 [debug] [MainThread]: On master: Close
+[0m12:04:42.559870 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:04:42.559958 [debug] [MainThread]: Connection 'model.semantic_poc.fct_revenue' was properly closed.
+[0m12:04:42.560053 [info ] [MainThread]: 
+[0m12:04:42.560157 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.08 seconds (0.08s).
+[0m12:04:42.560374 [debug] [MainThread]: Command end result
+[0m12:04:42.591299 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/deepak/PycharmProjects/SemanticModeling/dbt_project/target/manifest.json
+[0m12:04:42.592022 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/deepak/PycharmProjects/SemanticModeling/dbt_project/target/semantic_manifest.json
+[0m12:04:42.593975 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/deepak/PycharmProjects/SemanticModeling/dbt_project/target/run_results.json
+[0m12:04:42.594077 [info ] [MainThread]: 
+[0m12:04:42.594239 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:04:42.594365 [info ] [MainThread]: 
+[0m12:04:42.594491 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m12:04:42.596586 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.3541927, "process_in_blocks": "0", "process_kernel_time": 0.128237, "process_mem_max_rss": "150978560", "process_out_blocks": "0", "process_user_time": 0.761854}
+[0m12:04:42.596739 [debug] [MainThread]: Command `dbt run` succeeded at 12:04:42.596710 after 0.35 seconds
+[0m12:04:42.596865 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103b6fcb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1047ef800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ec7b90>]}
+[0m12:04:42.596975 [debug] [MainThread]: Flushing usage events
+[0m12:04:43.889458 [debug] [MainThread]: An error was encountered while trying to flush usage events

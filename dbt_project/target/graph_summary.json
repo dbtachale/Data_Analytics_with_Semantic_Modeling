@@ -1,0 +1,1 @@
+{"_invocation_id": "c2386a6e-ad72-4d9f-9d43-4bfb6600302f", "linked": {"0": {"name": "model.semantic_poc.fct_revenue", "type": "model"}, "1": {"name": "model.semantic_poc.raw_customers", "type": "model"}, "2": {"name": "model.semantic_poc.raw_products", "type": "model"}, "3": {"name": "model.semantic_poc.raw_orders", "type": "model"}}}

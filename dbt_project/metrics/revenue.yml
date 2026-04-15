@@ -1,0 +1,34 @@
+version: 2
+
+metrics:
+  - name: total_revenue
+    label: "Total Revenue"
+    description: >
+      Sum of net_amount for completed orders only.
+      Excludes returned, pending, and cancelled orders.
+      net_amount = gross_amount minus discount.
+    model: ref('fct_revenue')
+    calculation_method: sum
+    expression: net_revenue
+
+  - name: revenue_by_region
+    label: "Revenue by Region"
+    description: "Total revenue grouped by geographic region"
+    model: ref('fct_revenue')
+    calculation_method: sum
+    expression: net_amount
+    dimensions: [region]
+
+  - name: revenue_by_segment
+    label: "Revenue by Customer Segment"
+    model: ref('fct_revenue')
+    calculation_method: sum
+    expression: net_amount
+    dimensions: [customer_segment]
+
+  - name: gross_profit_margin
+    label: "Gross Profit Margin"
+    description: "gross_profit divided by net_amount, for completed orders"
+    model: ref('fct_revenue')
+    calculation_method: average
+    expression: gross_profit / net_amount
